@@ -97,10 +97,11 @@ session_start();
 	<div id="activites">
 		<?php 
 			if (isset($_SESSION['activities'])){
+				krsort($_SESSION['activities']);
 		 foreach($_SESSION['activities'] as $activity) {
 			// foreach($activity as $value) {
-				var_dump($activity);
-				var_dump($_SESSION['activities']);
+				// var_dump($activity);
+				// var_dump($_SESSION['activities']);
 			?> <div><?=$activity;?></div>
 		<?php }
 	 }

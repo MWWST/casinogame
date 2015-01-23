@@ -11,6 +11,27 @@ if (isset($_SESSION['counter'])){
 		die();
 	}
 
+	if(isset($_POST['action']) && $_POST['action'] == 'cavegold') 
+	{
+		$_SESSION['counter']+=rand(5,10);
+		$_SESSION['activities'][] = "You entered a CAVE and earned" .$_SESSION['counter'] . date('m-d-Y');
+		header('location: index.php');
+		die();
+	}
+	if(isset($_POST['action']) && $_POST['action'] == 'housegold') 
+	{
+		$_SESSION['counter']+=rand(2,5);
+		$_SESSION['activities'][] = "You entered a HOUSE and earned" .$_SESSION['counter'] . date('m-d-Y');
+		header('location: index.php');
+		die();
+	}
+	if(isset($_POST['action']) && $_POST['action'] == 'casinogold') 
+	{
+		$_SESSION['counter']+=rand(-50,50);
+		$_SESSION['activities'][] = "You entered a CASINO and earned" .$_SESSION['counter'] . date('m-d-Y');
+		header('location: index.php');
+		die();
+	}
 }
 
 else {
